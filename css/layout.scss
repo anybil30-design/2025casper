@@ -1,0 +1,68 @@
+// layout.sccs 레이아웃 서식
+
+// 변수 불러오기
+@import './common';
+
+// 애니메이션 시간변수
+$ani_time: 0.3s;
+// 정렬
+$box_center: 0 auto;
+// header
+header{
+  position: fixed; top:0px; left: 0px;  // 영상과 겹치게 하기 위해
+  width: 100%; height: 70px;
+  z-index: 1000;
+  transition: $ani_time;
+
+  // 로고 서식
+  > h1{
+    padding: 24px 0px 0px 2%;
+  }
+
+  // 로그인, 알림 아이콘
+  > .nav_icon{
+    width: 20px;
+    position: absolute; top:24px;
+    // border: 1px solid #f00;
+    > span.fas{
+      font-size: $t_size_m;
+      color: $txt_color2;
+      cursor: pointer;
+    }
+  }
+  > .nav_icon span:last-child{display: none;}
+  
+  > .icon1{right: 3.2%;}
+  > .icon2{right: 1%;}
+}
+
+// 메인메뉴 서식
+header nav{
+  width: 600px;
+  margin: -24px auto;
+  // transform:  translateY(-24px);
+}
+header nav .gnb{
+  display: flex;
+  justify-content: space-around;
+}
+header nav .gnb a{
+  color: $txt_color2;
+  font-size: $t_size_m;
+}
+header nav .gnb a:hover{
+  text-decoration: underline;
+}
+
+
+
+
+//footer
+footer{
+  background: $bg_color_g;
+  width: 100%;
+  height: 177px;
+}
+// footer > .f_inner{
+
+// }

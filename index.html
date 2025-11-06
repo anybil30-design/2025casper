@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>현대자동차 - 캐스퍼 소개 홈페이지(스크롤 레이아웃)</title>
+  <!-- css초기화 -->
+  <link href="./css/reset.css" rel="stylesheet" type="text/css" />
+  <!-- 공통서식 -->
+  <link href="./css/common.css" rel="stylesheet" type="text/css" />
+  <!-- 레이아웃 서식 -->
+  <link href="./css/layout.css" rel="stylesheet" type="text/css" />
+  <!-- 메인 서식 -->
+  <link href="./css/main.css" rel="stylesheet" type="text/css" />
+  <!-- 폰트어썸 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+
+  <!-- 제이쿼리 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- 제이쿼리 쿠키 -->
+  <script src="./script/jquery.cookie.js"></script>
+</head>
+<body>
+  <!-- 상단헤더영역 시작 -->
+  <header>
+    <h1>
+      <a href="index.html" title="메인페이지로 바로가기">
+        <img src="./images/logo-casper-white.png" alt="상단로고_화이트">
+      </a>
+    </h1>
+
+    <!-- 메인 메뉴 -->
+    <nav>
+      <ul class="gnb">
+        <li><a href="#intro" title="소개">소개</a></li>
+        <li><a href="#test_drive" title="체험">체험</a></li>
+        <li><a href="#event" title="이벤트">이벤트</a></li>
+        <li><a href="#buy_info" title="구매">구매</a></li>
+        <li><a href="#customer" title="고객지원">고객지원</a></li>
+      </ul>
+    </nav>
+
+    <!-- 오른쪽 끝에 배치될 아이콘 2개(로그인, 알림) -->
+    <div class="nav_icon icon1">
+      <span class="fas fa-user"></span>
+      <span>로그인</span>
+    </div>
+    <div class="nav_icon icon2">
+      <span class="fas fa-bell"></span>
+      <span>알림</span>
+    </div>
+
+    <!-- 오른쪽 고정 내비게이션 -->
+    <nav id="m_nav">
+      <ul>
+        <li><span class="num">1</span><a href="#intro" title="소개">소개</a></li>
+        <li><span class="num">2</span><a href="#test_drive" title="체험">체험</a></li>
+        <li><span class="num">3</span><a href="#event" title="이벤트">이벤트</a></li>
+        <li><span class="num">4</span><a href="#buy_info" title="구매">구매</a></li>
+        <li><span class="num">5</span><a href="#customer" title="고객지원">고객지원</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 메인콘텐츠영역 시작 -->
+  <main>
+    <!-- 1. 자동차 소개 영상 콘텐츠 -->
+    <section id="movie">
+      <video muted autoplay loop="infinite">
+        <source src="./images/main_KV.webm"  type="video/webm" alt="메인비디오">
+      </video>
+    </section>
+
+    <!-- 2. 가장 많이 찾는 캐스퍼 top3 -->
+    <section id="top3"></section>
+
+    <!-- 3. 소개페이지 -->
+    <section id="intro"></section>
+
+    <!-- 4. 시승신청페이지 -->
+    <section id="test_drive"></section>
+
+    <!-- 5. 이벤트 프로모션 -->
+    <section id="event"></section>
+
+    <!-- 6. 캐스퍼 구매 안내(구매하기) -->
+    <section id="buy"></section>
+
+    <!-- 7. 고객지원 -->
+    <section id="customer"></section>
+  </main>
+
+  <!-- 하단푸터영역 시작 -->
+  <footer>
+    <div class="f_inner">
+      <h2>
+        <a href="index.html" title="하단로고">
+          <img src="./images/f_logo-hyundai.png" alt="푸터로고"> 
+        </a>
+      </h2>
+      
+      <!-- 하단 내비게이션 -->
+      <nav class="g_lnb">
+        <ul>
+          <li><a href="#" title="이용약관">이용약관</a></li>
+          <li><a href="#" title="개인정보 처리방침">개인정보 처리방침</a></li>
+          <li><a href="#" title="저작권안내">저작권안내</a></li>
+          <li><a href="#" title="공동인증서 안내">공동인증서 안내</a></li>
+          <li><a href="#" title="현대자동차 홈페이지">현대자동차 홈페이지</a></li>
+        </ul>
+      </nav>
+
+      <address>
+        <dl>
+          <dt>사업자등록번호: </dt><dd>000-00-00000</dd>
+          <dt>통신판매업신고번호: </dt><dd>000-00-0000</dd>
+          <dt>대표이사: </dt><dd>000</dd>
+          <dt>주소</dt><dd>서울시 서초구 현릉로 00</dd>
+          <dt>호스팅서비스 제공: </dt><dd>00000</dd>
+        </dl>
+        <p>Copyright&copy;2025 hyundai moto company, all right reserved.</p>
+      </address>
+    </div>
+  </footer>
+
+  <!-- 제이퀘리 -->
+  <script>
+    $(document).ready(function(){
+      // 내비게이션 스크립트
+      // 1. 변수선언
+      const h1 = $('header h1 img');
+      const gnb = $('.gnb a');
+      const h_icon = $('header span.fas');
+
+      // 2. 사용자가 헤더영여겡 마우스 오버시
+      $('header').mouseenter(function(){
+        // 3개 변수값에 .h_txt_color서식을 추가
+        gnb.addClass('h_txt_color');
+        h_icon.addClass('h_txt_color');
+        // 헤더에도 .h_on을 추가
+        $(this).addClass('h_on');
+        // 로고 이미지 변경
+        h1.attr('src','./images/logo-casper_black.png');
+      });
+
+
+      // 3. 레더영역에 마우스 아웃시
+      $('header').mouseleave(function(){
+        // 3개 변수값에 .h_txt_color서식을 제거
+        gnb.removeClass('h_txt_color');
+        h_icon.removeClass('h_txt_color');
+        //헤더에도 .h_on을 제거
+        $(this).removeClass('h_on');
+        h1.attr('src','./images/logo-casper-white.png')
+      });
+
+    });
+  </script>
+</body>
+</html>
