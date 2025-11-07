@@ -2,11 +2,50 @@
 
 // 변수 불러오기
 @import './common';
-
+// body, html{
+//   scroll-behavior: smooth;
+// }
 // 애니메이션 시간변수
 $ani_time: 0.3s;
 // 정렬
 $box_center: 0 auto;
+
+// 모달 서식
+.modal{
+  position: fixed;
+  left: 0px;top:0px;
+  background-color: rgba(0,0,0,.8);
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+  display: none;
+  // 모달 이너
+  .modal_inner{
+    width: 400px;
+    background-color: $txt_color2;
+    position: relative;
+    top: 50%;left: 50%;
+    transform: translate(-50%,-50%);
+    img{
+      width: 100%;
+    }
+    // 닫기, 오늘 하루 창 열지 않음
+    .modal_btn{
+      border-top: 2px solid $txt_color1;
+      line-height: 40px;
+
+      .close_btn, #t_no_see, label{cursor: pointer;}
+
+      .close_btn{
+        float: right;
+        border: none;
+        background: none;
+        transform: translateY(8px);
+      }
+    }
+  }
+}
+
 // header
 header{
   position: fixed; top:0px; left: 0px;  // 영상과 겹치게 하기 위해
@@ -37,32 +76,142 @@ header{
 }
 
 // 메인메뉴 서식
-header nav{
+header .m_menu{
   width: 600px;
   margin: -24px auto;
   // transform:  translateY(-24px);
 }
-header nav .gnb{
+header .m_menu .gnb{
   display: flex;
   justify-content: space-around;
 }
-header nav .gnb a{
+header .m_menu .gnb a{
   color: $txt_color2;
   font-size: $t_size_m;
 }
-header nav .gnb a:hover{
+header .m_menu .gnb a:hover{
   text-decoration: underline;
 }
 
+// 오른쪽 고정 사이드바 
+#m_nav{
+  position: fixed;
+  right: 30px;top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
 
+  width: 200px;height: 160px;
+  > ul{
+    position: relative;
+    >li{
+      width: 30px;height: 30px;
+      border-radius: 40px;
+      position: absolute;
+      right: 0px;
+      transition: 0.5s;
+      line-height: 30px;
+      overflow: hidden;
+      // 스크립트도 가능 
+      // &:hover{
+      //   background-color:rgba(0,0,0,.8) !important;
+      //   width: 200px !important;
+      // }
+      
+      // 숫자 서식(span)
+      .num{
+        display: inline-block;
+        width: 30px; height: 30px;
+        border-radius: 50%;
+        background: $nav_color01;
+        color: $txt_color2;
+        text-align: center;
+        font-weight: bold;
+        transition: $ani_time;
+        // 오버시 배경색 변경 (대신 .num에 오버했을시에만 색이 적용)
+        // &:hover{
+        //   background: $nav_color02 !important;
+        // }
+      }
+      a{
+        color: $txt_color2;
+        display: inline-block;
+        width: 160px;
+        text-align: center;
+        position: absolute;top:0px;
+      }
+    }
+    >li:nth-child(2){top: 40px;}
+    >li:nth-child(3){top: 80px;}
+    >li:nth-child(4){top: 120px;}
+    >li:last-child{top: 160px;}
+  }
 
+}
+// 내비게이션에 마우스 오버시 li태그에 적용할 배경서식
+.m_nav_on{
+  background-color:rgba(0,0,0,.8) !important;
+  width: 200px !important;
+}
 
 //footer
 footer{
   background: $bg_color_g;
   width: 100%;
-  height: 177px;
-}
-// footer > .f_inner{
+  padding: 40px 0px;
+  // 푸터 이너
+  > .f_inner{
+    width: 1200px; 
+    margin: $box_center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    // 하단 로고
+    > h2{
+      padding-top: 10px;
+      width: 150px;
+    }
+    // 하단 내비
+    .f_lnb{
+      ul{
+        display: flex;
+        padding-top: 15px;
+        a{
+          color: $line_color_g;
+          padding: 0px 20px;
+          border-right: 1px solid $line_color_g;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+        >li:last-child a{
+          border: none;
+        }
+        >li:nth-child(2) a{
+          color: $txt_color2;
+        }
+      }
+    }
+    // address
+    address{
+      line-height: 26px;
+      text-transform: uppercase;
+      color: $line_color_g;
+      // border: 1px solid #fff;
+      margin-left: 170px;
+      dl{
+        width: 1200px;
+        dt,dd{
+          display: inline-block;
+          
+        }
+        dt{
+          
+        }
+        dd{
+          margin-right: 70px;
+        }
+      }
+    }
 
-// }
+  }
+}

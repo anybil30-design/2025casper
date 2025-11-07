@@ -1,1 +1,61 @@
-/*# sourceMappingURL=main.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+body {
+  font-family: "Noto Sans KR", sans-serif, arial;
+  font-size: 12px;
+  color: #333;
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+address {
+  font-style: normal;
+}
+
+.h_on {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.h_txt_color {
+  color: #333 !important;
+}
+
+main {
+  overflow: hidden;
+  clear: both;
+}
+main > #movie {
+  height: 100vh;
+  background: #ccc;
+}
+main > #movie > video {
+  width: 100%;
+}
+main > #top3 {
+  height: 1146px;
+  background: cornsilk;
+}
+main > #intro {
+  height: 923px;
+  background-color: aqua;
+}
+main > #test_drive {
+  height: 923px;
+  background: orange;
+}
+main > #event {
+  height: 923px;
+  background: rgb(250, 21, 200);
+}
+main > #buy {
+  height: 923px;
+  background: rgb(17, 0, 255);
+}
+main > #customer {
+  height: 923px;
+  background: rgb(200, 255, 0);
+}/*# sourceMappingURL=main.css.map */
