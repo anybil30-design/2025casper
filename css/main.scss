@@ -1,15 +1,171 @@
-@import './common';
+@use 'common' as *;
+
+// 마진값 설정
+$m_value: 80px;
 
 main{
   overflow: hidden;
   clear: both;  // header영역세ㅓ 혹시 사용된 float속성이 있다면 float속성해제 한다.
+
+  //다음페이지 이동하기 버튼 서식
+  @mixin arrow_btn{
+    width: 30px;height: 30px;
+    border-left: 1px solid $txt_color2;
+    border-bottom: 1px solid $txt_color2;
+    transform: rotate(-45deg);
+  }
+  // 버튼서식
+  @mixin btn(){
+    border: 1px solid $txt_color1;
+    background: $txt_color2;
+    padding: 8px 26px;
+    cursor: pointer;
+  }
+
+  // 1. casper
   > #movie{
     height: 100vh;
-    background: $line_color_g;
+    // background: #ff0000;
+    overflow: hidden;
     > video{width: 100%;}
+
+    // 섹션 1 info
+    .m_info{
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      top: 40%;
+      z-index: 100;
+      color: $txt_color2;
+      >h2{
+        font-size: 60px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+      > p{
+        line-height: 80px;
+        font-size: $t_size_m;
+      }
+      > a{
+        color: $txt_color2;
+        font-size: 14px;
+        text-decoration: underline;
+        margin: 0px 20px;
+        padding: 5px 10px;
+
+        // 첫번째 메뉴서식
+        &:first-of-type{
+          background: $nav_color02;
+        }
+      }
+    }
+
+
+    
+    > #next_btn{
+      //글자 숨기기
+      display: inline-block;
+      text-indent: -9999px;
+      position: absolute;
+      bottom: 40px; left: 50%;
+      transform: translate(-50%, -50%);
+      @include arrow_btn;
+    }
   }
-  >#top3{height: 1146px;background: cornsilk;}
-  
+
+  // 2. 가장 많이 찾는 캐스퍼 top3
+  >#top3{
+    height: 1146px;background: cornsilk;
+    text-align: center;
+    > .p01{
+      font-size: $t_size_m;
+      line-height: 50px;
+    }
+    /* slide 서식 */
+    .top3{
+      position: relative;
+      margin-top: 50px;
+      padding: 20px 0px 50px 0px;
+
+      > .swiper-wrapper{
+        width: 100%;height: 100%;
+        .rank{
+          color: #327186;
+          border: 1px solid #327186;
+          padding: 6px 30px;
+          border-radius: 20px;
+          font-size: $t_size_ss;
+        }
+        .top3_title{
+          font-size: $t_size_t1;
+          font-weight: 600;
+          padding-top: 30px;
+          color: $txt_color5;
+        }
+        img{
+          width: 400px;
+          padding: $m_value 0px;
+          transition: 0.5s;
+          transition-timing-function: cubic-bezier(0.1,1.0);
+          transform: scale(0.7);
+        }
+        .swiper-slide-active img{transform: scale(1.2);}
+        // 슬라이드 디테일
+        .detail{
+          display: flex;
+          justify-content: center;
+          padding-bottom: 60px;
+          >li{
+            width: 190px;
+            border-right: 1px solid $line_color_g;
+            text-align: left !important;
+            line-height: 20px;
+            font-size: $t_size_m;
+            padding: 0px 20px;
+            &:last-child{border: none; padding-top: 6px;}
+            .outer_color,.inner_color{
+              display: block;
+              width: 56px; height: 40px;
+              text-indent: -9999px;
+              float: left;
+              margin-right: 10px;
+            }
+            .kaki{background-color: #494b3e;}
+            .black{background-color: #000;}
+            .white{background-color: #fff; border: 1px solid #ccc;}
+            .orange{background-color: rgb(190, 86, 0);}
+            .price{
+              font-size: $t_size_t1;
+              font-weight: bold;
+              color: $txt_color5;
+            }
+          }
+          
+        }
+        .btn{
+          @include btn();
+        }
+      }
+    }
+    // 컨트롤 버튼
+    .swiper-pagination-bullet{
+      width: 100px !important;
+      height: 10px !important;
+      border-radius: 0px !important;
+      background-color: $nav_color02 !important;
+      margin: 0 5px !important;
+    }
+    // 좌우 버튼
+    .swiper-button-next, .swiper-button-prev{
+      border-radius: 0 !important;
+      margin: 0 5px !important;
+    }
+    .swiper-button-next::after, .swiper-button-next::before{
+      color: $txt_color3 !important;
+    }
+    
+  }
+
   >#intro{height: 923px;background-color: aqua;}
 
   >#test_drive{height: 923px; background: orange;}
@@ -19,4 +175,20 @@ main{
   >#buy{height: 923px; background: rgb(17, 0, 255);}
 
   >#customer{height: 923px; background: rgb(200, 255, 0);}
+
+}
+
+//콘텐츠 제목서식
+@mixin m_title{
+  font-size: $t_size_t3;
+  text-align: center;
+  font-weight: bold;
+  padding: $m_value 0px 10px 0px;
+}
+
+// top3, intro, test_drive, event, buy
+// #top3, #intro, #test_drive, #event, #buy{}
+.m_title{
+  margin: $m_value 0px 0px 0px;
+  @include m_title;
 }

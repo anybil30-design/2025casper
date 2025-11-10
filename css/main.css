@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
 body {
   font-family: "Noto Sans KR", sans-serif, arial;
@@ -30,14 +31,155 @@ main {
 }
 main > #movie {
   height: 100vh;
-  background: #ccc;
+  overflow: hidden;
 }
 main > #movie > video {
   width: 100%;
 }
+main > #movie .m_info {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  z-index: 100;
+  color: #ffffff;
+}
+main > #movie .m_info > h2 {
+  font-size: 60px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+main > #movie .m_info > p {
+  line-height: 80px;
+  font-size: 16px;
+}
+main > #movie .m_info > a {
+  color: #ffffff;
+  font-size: 14px;
+  text-decoration: underline;
+  margin: 0px 20px;
+  padding: 5px 10px;
+}
+main > #movie .m_info > a:first-of-type {
+  background: #006EFF;
+}
+main > #movie > #next_btn {
+  display: inline-block;
+  text-indent: -9999px;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-left: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: rotate(-45deg);
+}
 main > #top3 {
   height: 1146px;
   background: cornsilk;
+  text-align: center;
+  /* slide 서식 */
+}
+main > #top3 > .p01 {
+  font-size: 16px;
+  line-height: 50px;
+}
+main > #top3 .top3 {
+  position: relative;
+  margin-top: 50px;
+  padding: 20px 0px 50px 0px;
+}
+main > #top3 .top3 > .swiper-wrapper {
+  width: 100%;
+  height: 100%;
+}
+main > #top3 .top3 > .swiper-wrapper .rank {
+  color: #327186;
+  border: 1px solid #327186;
+  padding: 6px 30px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+main > #top3 .top3 > .swiper-wrapper .top3_title {
+  font-size: 22px;
+  font-weight: 600;
+  padding-top: 30px;
+  color: #052B58;
+}
+main > #top3 .top3 > .swiper-wrapper img {
+  width: 400px;
+  padding: 80px 0px;
+  transition: 0.5s;
+  transition-timing-function: cubic-bezier(0.1, 1);
+  transform: scale(0.7);
+}
+main > #top3 .top3 > .swiper-wrapper .swiper-slide-active img {
+  transform: scale(1.2);
+}
+main > #top3 .top3 > .swiper-wrapper .detail {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 60px;
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li {
+  width: 190px;
+  border-right: 1px solid #ccc;
+  text-align: left !important;
+  line-height: 20px;
+  font-size: 16px;
+  padding: 0px 20px;
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li:last-child {
+  border: none;
+  padding-top: 6px;
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li .outer_color, main > #top3 .top3 > .swiper-wrapper .detail > li .inner_color {
+  display: block;
+  width: 56px;
+  height: 40px;
+  text-indent: -9999px;
+  float: left;
+  margin-right: 10px;
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li .kaki {
+  background-color: #494b3e;
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li .black {
+  background-color: #000;
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li .white {
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li .orange {
+  background-color: rgb(190, 86, 0);
+}
+main > #top3 .top3 > .swiper-wrapper .detail > li .price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #052B58;
+}
+main > #top3 .top3 > .swiper-wrapper .btn {
+  border: 1px solid #333;
+  background: #ffffff;
+  padding: 8px 26px;
+  cursor: pointer;
+}
+main > #top3 .swiper-pagination-bullet {
+  width: 100px !important;
+  height: 10px !important;
+  border-radius: 0px !important;
+  background-color: #006EFF !important;
+  margin: 0 5px !important;
+}
+main > #top3 .swiper-button-next, main > #top3 .swiper-button-prev {
+  border-radius: 0 !important;
+  margin: 0 5px !important;
+}
+main > #top3 .swiper-button-next::after, main > #top3 .swiper-button-next::before {
+  color: #225499 !important;
 }
 main > #intro {
   height: 923px;
@@ -58,4 +200,12 @@ main > #buy {
 main > #customer {
   height: 923px;
   background: rgb(200, 255, 0);
+}
+
+.m_title {
+  margin: 80px 0px 0px 0px;
+  font-size: 34px;
+  text-align: center;
+  font-weight: bold;
+  padding: 80px 0px 10px 0px;
 }/*# sourceMappingURL=main.css.map */
