@@ -14,12 +14,19 @@ main{
     border-bottom: 1px solid $txt_color2;
     transform: rotate(-45deg);
   }
-  // 버튼서식
+  // 버튼1서식
   @mixin btn(){
     border: 1px solid $txt_color1;
     background: $txt_color2;
     padding: 8px 26px;
     cursor: pointer;
+  }
+
+  @mixin btn1(){
+    padding: 10px 60px;
+    color: $txt_color2;
+    background-color: $txt_color3;
+    line-height: 30px;
   }
 
   // 1. casper
@@ -75,8 +82,8 @@ main{
 
   // 2. 가장 많이 찾는 캐스퍼 top3
   >#top3{
-    height: 1146px;background: cornsilk;
     text-align: center;
+    padding-bottom: 70px;
     > .p01{
       font-size: $t_size_m;
       line-height: 50px;
@@ -166,11 +173,129 @@ main{
     
   }
 
-  >#intro{height: 923px;background-color: aqua;}
+  // 3. 소개페이지 저식
+  >#intro{
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    >.m_title{
+      position: absolute; width: 100%;
+      left: 50%;top: -100px;
+      transform: translateX(-50%);
+    }
+    //비디오
+    > video{
+      // display: none;
+      width: 100%;
+    }
+    > .intro_title_left,.intro_title_right{
+      position: absolute;
+      z-index: 100;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 40px;
+    }
+    >.intro_title_left{
+      top:200px;
+      // left: 200px;
+      left: -330px;
+    }
+    >.intro_title_right{
+      bottom: 200px;
+      // right: 150px;
+      right: -300px;
+      text-align: right;
+    }
 
-  >#test_drive{height: 923px; background: orange;}
+    // 더보기
+    > .btn{
+      @include btn();
+      // z-index: 100;
+      position: absolute;
+      left: 50%;bottom:50px;
+      transform: translateX(-50%);
+      display: none;
+    }
+  }
 
-  >#event{height: 923px; background: rgb(250, 21, 200);}
+  // 4. 시승신청페이지 서식
+  >#test_drive{
+    text-align: center;
+    padding-bottom: 70px;
+    >.p01{
+      line-height: 40px;
+      font-size: $t_size_ss;
+    }
+    article{
+      width:430px; height: 280px;
+      border: 1px solid $line_color_g;
+      padding: 15px;
+      margin-top: 50px;
+      display:inline-block;
+      vertical-align: middle; // 세로정렬 속성
+
+      >h3{
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 30px;
+      }
+      .p02{
+        padding: 20px 0px;
+        line-height:22px;
+        margin-bottom: 30px;
+      }
+      .test_d_btn1{
+        @include btn1();
+      }
+      .test_d_btn2{
+        display: block;
+        position: relative;
+        top: 20px;
+        color: $nav_color01;
+        font-weight: 450;
+      }
+
+      .test_s_p{
+        transform: translateY(100px);
+      }
+    }
+    .text_drive_r > .test_s_p{
+      transform: translateY(112px);
+    }
+  }
+
+  // 5. 이벤트 콘텐츠 서식
+  >#event{
+    // height: 923px;
+    text-align: center;
+    background-color: $line_color_g;
+    >.p01{
+      line-height: 40px;
+      font-size: $t_size_ss;
+    }
+    .event{
+      transform: scale(0.7);
+      padding: 0 0 50px 0;
+      .event_wrapper{
+        width: 100%;
+        .event_slide{
+          img{
+            width: 100%;
+          }
+        }
+      }
+      .swiper-pagination-bullet{
+        transform: scale(1) !important;
+        width: 20px; height: 20px;
+        transition: 0.3s;
+      }
+      .swiper-pagination-bullet-active{
+        width: 100px;
+        border-radius: 50px;
+      }
+    }
+  }
 
   >#buy{height: 923px; background: rgb(17, 0, 255);}
 

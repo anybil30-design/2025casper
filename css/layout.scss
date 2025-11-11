@@ -1,7 +1,7 @@
 // layout.sccs 레이아웃 서식
 
 // 변수 불러오기
-@use 'common';
+@use 'common' as *;
 // body, html{
 //   scroll-behavior: smooth;
 // }
@@ -204,9 +204,7 @@ footer{
           display: inline-block;
           
         }
-        dt{
-          
-        }
+
         dd{
           margin-right: 70px;
         }
