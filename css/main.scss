@@ -1,5 +1,4 @@
 @use 'common' as *;
-
 // 마진값 설정
 $m_value: 80px;
 
@@ -28,7 +27,7 @@ main{
     background-color: $txt_color3;
     line-height: 30px;
   }
-
+  
   // 1. casper
   > #movie{
     height: 100vh;
@@ -297,12 +296,175 @@ main{
     }
   }
 
-  >#buy{height: 923px; background: rgb(17, 0, 255);}
+  // 6. 구매하기
+  >#buy{
+    height: 923px;
+    text-align: center;
+    >.p01{
+      line-height: 40px;
+      font-size: $t_size_ss;
+    }
+    h3{
+      font-size: $t_size_t2;
+      padding: 40px 0px 20px 0px;
+      font-weight: bold;
+      >.t_color{
+        color: $txt_color4;
+      }
+    }
+    .buy_info_list{
+      display: grid;
+      width: 1200px;
+      margin: 0 auto;
+      grid-template-columns: repeat(3, 33.333333%);
+      
+      >li{
+        padding-top: 50px;
+        >h4{
+          font-size: 18px;
+          font-weight: bold;
+        }
+        >img{
+          width: 80px;
+          padding: 15px 0px;
+        }
+        >.p02{
+          line-height: 20px;
+        }
+        &:last-child{
+          // 마지가 li는 영상 컨텐츠라서 병합을 해야함.
+          grid-area: 3/1/4/4; //행/열/행/열
+          iframe{
+            height: 400px;
+          }
+        }
+      }
+    }
+  }
 
-  >#customer{height: 923px; background: rgb(200, 255, 0);}
-
+  // 7. 고객지원
+  >#customer{
+    margin-top: 300px;
+    background-color: $bg_color_light_g;
+    >article{
+      padding: 24px 0px;
+      width: 1200px; height: 280px;
+      margin: 15px auto;
+      background-color: $txt_color2;
+      >h3{
+      font-size: 18px;
+      text-align: center;
+      padding: 60px 0px 20px 0px;
+      font-weight: bold;
+      }
+      .ars_left,.ars_right{
+        width: 50%;padding: 20px 30px;
+        box-sizing: border-box;
+        float: left;
+        display:flex;
+        justify-content: space-around;
+        p{
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          line-height: 30px;
+          align-items: center;
+          >a{color: $nav_color02;}
+        }
+        >dl{
+          line-height: 24px;
+          >dt{font-weight: bold;}
+        }
+      }
+      .ars_left{border-right: 1px solid $line_color_g;};
+      // .ars_right{}
+      strong{
+        font-weight: 500;
+        font-size: $t_size_m;
+      }
+      .car_icon,.member_icon{
+        background:url('../images/bg-support-ars.png');
+        display: inline-block;
+        height: 46px;
+        text-indent: -9999px;
+        margin-top: 30px;
+      }
+      //아이콘 크기 각각 설정, 크기지정함.
+      .car_icon{width: 75px;}
+      .member_icon{
+        width: 60px;
+        background-position: -90px 0px;
+        transform: translateY(-30px);
+      }
+    }
+    // 아래쪽 목록
+    .cs_etc{
+      width: 1200px;
+      display: grid;
+      margin: 0 auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      padding-bottom: 50px;
+      li{
+        background-color: $txt_color2;
+        padding: 30px 30px;
+        position: relative;
+        h3{
+          font-weight: bold;
+          font-size: $t_size_m;
+          line-height: 50px;
+        }
+        p{
+          line-height: 20px;
+          &:last-of-type{
+            padding-bottom: 20px;
+          }
+        }
+        .cs_etc_txt{
+          font-weight: 500;
+        }
+        >a{color: $nav_color02;}
+        .cs_etc_img{display: block;text-align: center;}
+        .cs_btn{
+          text-align: center;
+          display: block;
+          width: 150px;
+          color: $txt_color2;
+          background-color: $txt_color3;
+          line-height: 40px;
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &:nth-child(4){
+          text-align: center;
+          h3,p{
+            text-align: left !important;
+          }
+          a:first-of-type{
+            padding-bottom: 10px;
+          }
+        }
+        &:last-child{
+          padding: 0px;
+          grid-area: 2/1/3/5;
+          overflow: hidden;
+          background-color: none;
+          img{
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
 }
-
+.clearfix{
+    clear: both;
+    content: '';
+    display: block;
+  }
 //콘텐츠 제목서식
 @mixin m_title{
   font-size: $t_size_t3;

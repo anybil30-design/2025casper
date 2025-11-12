@@ -299,11 +299,180 @@ main > #event .event .swiper-pagination-bullet-active {
 }
 main > #buy {
   height: 923px;
-  background: rgb(17, 0, 255);
+  text-align: center;
+}
+main > #buy > .p01 {
+  line-height: 40px;
+  font-size: 14px;
+}
+main > #buy h3 {
+  font-size: 20px;
+  padding: 40px 0px 20px 0px;
+  font-weight: bold;
+}
+main > #buy h3 > .t_color {
+  color: #3B8BAE;
+}
+main > #buy .buy_info_list {
+  display: grid;
+  width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 33.333333%);
+}
+main > #buy .buy_info_list > li {
+  padding-top: 50px;
+}
+main > #buy .buy_info_list > li > h4 {
+  font-size: 18px;
+  font-weight: bold;
+}
+main > #buy .buy_info_list > li > img {
+  width: 80px;
+  padding: 15px 0px;
+}
+main > #buy .buy_info_list > li > .p02 {
+  line-height: 20px;
+}
+main > #buy .buy_info_list > li:last-child {
+  grid-area: 3/1/4/4;
+}
+main > #buy .buy_info_list > li:last-child iframe {
+  height: 400px;
 }
 main > #customer {
-  height: 923px;
-  background: rgb(200, 255, 0);
+  margin-top: 300px;
+  background-color: #ededed;
+}
+main > #customer > article {
+  padding: 24px 0px;
+  width: 1200px;
+  height: 280px;
+  margin: 15px auto;
+  background-color: #ffffff;
+}
+main > #customer > article > h3 {
+  font-size: 18px;
+  text-align: center;
+  padding: 60px 0px 20px 0px;
+  font-weight: bold;
+}
+main > #customer > article .ars_left, main > #customer > article .ars_right {
+  width: 50%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  float: left;
+  display: flex;
+  justify-content: space-around;
+}
+main > #customer > article .ars_left p, main > #customer > article .ars_right p {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  align-items: center;
+}
+main > #customer > article .ars_left p > a, main > #customer > article .ars_right p > a {
+  color: #006EFF;
+}
+main > #customer > article .ars_left > dl, main > #customer > article .ars_right > dl {
+  line-height: 24px;
+}
+main > #customer > article .ars_left > dl > dt, main > #customer > article .ars_right > dl > dt {
+  font-weight: bold;
+}
+main > #customer > article .ars_left {
+  border-right: 1px solid #ccc;
+}
+main > #customer > article strong {
+  font-weight: 500;
+  font-size: 16px;
+}
+main > #customer > article .car_icon, main > #customer > article .member_icon {
+  background: url("../images/bg-support-ars.png");
+  display: inline-block;
+  height: 46px;
+  text-indent: -9999px;
+  margin-top: 30px;
+}
+main > #customer > article .car_icon {
+  width: 75px;
+}
+main > #customer > article .member_icon {
+  width: 60px;
+  background-position: -90px 0px;
+  transform: translateY(-30px);
+}
+main > #customer .cs_etc {
+  width: 1200px;
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  padding-bottom: 50px;
+}
+main > #customer .cs_etc li {
+  background-color: #ffffff;
+  padding: 30px 30px;
+  position: relative;
+}
+main > #customer .cs_etc li h3 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 50px;
+}
+main > #customer .cs_etc li p {
+  line-height: 20px;
+}
+main > #customer .cs_etc li p:last-of-type {
+  padding-bottom: 20px;
+}
+main > #customer .cs_etc li .cs_etc_txt {
+  font-weight: 500;
+}
+main > #customer .cs_etc li > a {
+  color: #006EFF;
+}
+main > #customer .cs_etc li .cs_etc_img {
+  display: block;
+  text-align: center;
+}
+main > #customer .cs_etc li .cs_btn {
+  text-align: center;
+  display: block;
+  width: 150px;
+  color: #ffffff;
+  background-color: #225499;
+  line-height: 40px;
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+main > #customer .cs_etc li:nth-child(4) {
+  text-align: center;
+}
+main > #customer .cs_etc li:nth-child(4) h3, main > #customer .cs_etc li:nth-child(4) p {
+  text-align: left !important;
+}
+main > #customer .cs_etc li:nth-child(4) a:first-of-type {
+  padding-bottom: 10px;
+}
+main > #customer .cs_etc li:last-child {
+  padding: 0px;
+  grid-area: 2/1/3/5;
+  overflow: hidden;
+  background-color: none;
+}
+main > #customer .cs_etc li:last-child img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.clearfix {
+  clear: both;
+  content: "";
+  display: block;
 }
 
 .m_title {
