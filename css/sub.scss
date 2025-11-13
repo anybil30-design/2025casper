@@ -1,0 +1,53 @@
+@use 'common'as *;
+header{
+  position: static !important;
+  >.nav_icon span.fas{
+    color: $txt_color1 !important;
+  }
+}
+header .m_menu .gnb a{
+  color: $txt_color1 !important;
+}
+
+main{
+  width: 100%;
+  height: 670px;
+  background-color: $bg_color_light_g;
+  position: relative;
+}
+
+form{
+  fieldset{
+    width: 400px;
+    position: absolute;
+    top: 20%; left: 50%;
+    transform: translateX(-50%);
+    p{padding: 8px 0px;}
+    legend{
+      text-align: center;
+      font-size: $t_size_t2;
+      font-weight: bold;
+      line-height: 100px;
+    }
+    #id_txt, #pw_txt, #login_btn{
+      width: 100%;
+      line-height: 40px;
+      border: none;
+    }
+    #id_txt, #pw_txt{text-indent: 5px;}
+    #login_btn{
+      color: $txt_color2;
+      background-color: $txt_color3;
+    }
+    p:last-child{
+      text-align: center;
+      a{
+        padding: 0px 20px;
+        border-right: 1px solid $txt_color1;
+        &:last-child{
+          border: none;
+        }
+      }
+    }
+  }
+}

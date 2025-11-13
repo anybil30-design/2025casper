@@ -76,12 +76,11 @@ header > .nav_icon {
   position: absolute;
   top: 24px;
 }
-header > .nav_icon > span.fas {
+header > .nav_icon span.fas {
   font-size: 16px;
   color: #ffffff;
-  cursor: pointer;
 }
-header > .nav_icon span:last-child {
+header > .nav_icon > span:last-child {
   display: none;
 }
 header > .icon1 {

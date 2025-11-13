@@ -63,13 +63,12 @@ header{
     width: 20px;
     position: absolute; top:24px;
     // border: 1px solid #f00;
-    > span.fas{
+    span.fas{
       font-size: $t_size_m;
       color: $txt_color2;
-      cursor: pointer;
     }
   }
-  > .nav_icon span:last-child{display: none;}
+  > .nav_icon > span:last-child{display: none;}
   
   > .icon1{right: 3.2%;}
   > .icon2{right: 1%;}

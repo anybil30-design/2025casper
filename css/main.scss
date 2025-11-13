@@ -34,7 +34,17 @@ main{
     // background: #ff0000;
     overflow: hidden;
     > video{width: 100%;}
-
+    > #next_btn{
+      //글자 숨기기
+      display: inline-block;
+      // text-indent: -9999px;
+      // font-size: 0px;
+      color: rgba(0,0,0,0);
+      position: absolute;
+      bottom: 40px; left: 50%;
+      transform: translate(-50%, -50%);
+      @include arrow_btn;
+    }
     // 섹션 1 info
     .m_info{
       text-align: center;
@@ -44,15 +54,18 @@ main{
       z-index: 100;
       color: $txt_color2;
       >h2{
+        
         font-size: 60px;
         text-transform: uppercase;
         font-weight: bold;
       }
       > p{
+        
         line-height: 80px;
         font-size: $t_size_m;
       }
       > a{
+        
         color: $txt_color2;
         font-size: 14px;
         text-decoration: underline;
@@ -62,20 +75,9 @@ main{
         // 첫번째 메뉴서식
         &:first-of-type{
           background: $nav_color02;
+          
         }
       }
-    }
-
-
-    
-    > #next_btn{
-      //글자 숨기기
-      display: inline-block;
-      text-indent: -9999px;
-      position: absolute;
-      bottom: 40px; left: 50%;
-      transform: translate(-50%, -50%);
-      @include arrow_btn;
     }
   }
 
